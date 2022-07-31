@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab Assignment 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="btn">Get AJAX</button>
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#btn").click(function() {
+            $.ajax({
+                url: "http://localhost:8080/php-second/Ajax/ajaxget.php",
+                method: "POST",
+                data: {
+                    x: "m-d-Y",
+                    y: "Y-m-d",
+                },
+                success: function(result) {
+                    alert(result);
+                },
+            });
+        });
+    });
+</script>
+
+</html>
